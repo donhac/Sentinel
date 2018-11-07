@@ -31,6 +31,7 @@ version=`date "+%Y%m%d%H"`
 # 启动镜像
 docker run -d --restart=on-failure:5 --privileged=true \
     -w /home \
+    -p 8089:8080 \
     -v $PWD/logs:/home/logs \
     --name sentinel-dashboard deepexi/sentinel-dashboard \
     java \
